@@ -1,0 +1,6 @@
+{
+  "name": "HeartCraft - Personalized Greeting & Apology Experiences",
+  "description": "Create secure, password-protected interactive greeting, anniversary, birthday, and heartfelt apology cards with custom YouTube music and memories.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

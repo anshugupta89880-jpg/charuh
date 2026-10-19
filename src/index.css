@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .font-handwriting {
+    font-family: 'Caveat', cursive;
+  }
+  .font-script {
+    font-family: 'Dancing Script', cursive;
+  }
+  .font-calligraphy {
+    font-family: 'Great Vibes', cursive;
+  }
+  .font-serif-luxury {
+    font-family: 'Playfair Display', serif;
+  }
+  .font-sans-modern {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .font-playful {
+    font-family: 'Pacifico', cursive;
+  }
+  .font-typewriter {
+    font-family: 'Courier Prime', monospace;
+  }
+}
+
+/* Custom subtle animations */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+/* Glassmorphism surfaces */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-panel-dark {
+  background: rgba(24, 20, 34, 0.75);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Polaroid aesthetic */
+.polaroid-shadow {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* =========================================================
+   Print Styles for Physical Cards
+   ========================================================= */
+@media print {
+  /* Hide all app chrome, navigation, headers, footers and modals except printable card */
+  body * {
+    visibility: hidden;
+  }
+
+  #printable-physical-card-area,
+  #printable-physical-card-area * {
+    visibility: visible;
+  }
+
+  #printable-physical-card-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  @page {
+    margin: 1cm;
+    size: auto;
+  }
+}
